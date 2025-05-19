@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style=" padding: 0; margin: 0; height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: black; gap: 1rem; padding: 1rem; border-radius: 2rem;">
+        <h1 style="color: beige;">Guess The Number</h1>
+        <label for="" id="start-lable" style="color: beige;">
+            Guess the number</label>
+        <label for="" id="mid-lable" style="color: beige; display: none;">
+            You Guessed The Wrong Number</label>
+        <label for="" id="win-lable" style="color: beige; display:none;">
+            Congratulations, You Guessed The Correct Number</label>
+        <input type="text" id="input">
+            <button type="submit" id="submit-button">Guess</button>
+            <button id="reset-button" style="display: none;">Reset</button>
+        
+    </div>
+    <script>
+        let resetButton = document.querySelector('#reset-button');
+        let startGame = function(){
+            let guessingNum = Math.round(Math.random() * 10);
+            let guessedNum;
+            let submitButton = document.querySelector('#submit-button');
+            let startLable = document.querySelector('#start-lable');
+            let midLable = document.querySelector('#mid-lable');
+            let winLable = document.querySelector('#win-lable');
+            startLable.style.display = 'block';
+            midLable.style.display = 'none';
+            winLable.style.display = 'none';
+            submitButton.style.display = 'block';
+            resetButton.style.display = 'none';
+            
+            let handleSubmit = function(){
+                guessedNum = document.querySelector('#input').value;
+                startLable.style.display = 'none';
+                if(guessedNum == guessingNum){
+                    winLable.style.display = 'block';
+                    submitButton.style.display = 'none';
+                    resetButton.style.display = 'block';
+                    midLable.style.display = 'none';
+                    alert('Yay! You Guessed the Correct Number.')
+                } else{
+                    midLable.style.display = 'block';
+                }
+            }
+            submitButton.addEventListener('click',handleSubmit);
+        }
+        
+        document.addEventListener('DOMContentLoaded',startGame);
+        resetButton.addEventListener('click',startGame);
+
+        
+
+    </script>
+</body>
+</html>
