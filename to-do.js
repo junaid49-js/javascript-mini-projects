@@ -41,5 +41,7 @@ let deleteCompletedTask = (index) => {
 
 
 console.log("to-do.js!");
-// node
-// .load to-do.js
+
+//How to run
+//> node
+//> .load to-do.js
