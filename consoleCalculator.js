@@ -25,3 +25,8 @@ let squareOfX = function(x){
 let powerBy = function(a,b){
     return a ** b;
 }
+
+
+// How to run
+//> node
+//> .load consoleCalculator.js
