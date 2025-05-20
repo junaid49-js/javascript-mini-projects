@@ -35,3 +35,5 @@ let kelvinToCelsius = function(K){
 }
 
 console.log('You can convert the temperature value by this program.');
+//> node
+//> .load tempConvert.js
